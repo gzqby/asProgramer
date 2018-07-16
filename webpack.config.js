@@ -22,11 +22,17 @@ module.exports = {
 			},
 			{
 				test: /\.css$/,
-				use: ['style-loader', 'css-loader']
+				use: ExtractTextWebpackPlugin.extract({
+                    fallback: 'style-loader',
+                    use:['css-loader']
+                }) 
 			},
 			{
 				test: /\.less$/,
-				use: ['style-loader', 'css-loader', 'less-loader']
+				use: ExtractTextWebpackPlugin.extract({
+                    fallback: 'style-loader',
+                    use:['css-loader', 'less-loader']
+                }) 
 			},
 			{
 				test: /\.(png|svg|jpg|gif)$/,
@@ -46,9 +52,8 @@ module.exports = {
 		new HtmlWebpackPlugin({
             filename: 'index.html',
 			title: 'production',
-            template: './index.html',
-            hash: true,
-            chunks: ['app'],
+            template: './src/index.html',
+            hash: true
         }),
         new CopyWebackPlugin([
             {
