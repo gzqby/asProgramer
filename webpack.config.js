@@ -9,7 +9,8 @@ module.exports = {
 	entry: './src/app.js',
 	output: {
 		filename: 'app.js',
-		path: path.resolve(__dirname, 'dist')
+		path: path.resolve(__dirname, 'dist'),
+		publicPath: '/'
 	},
 	module: {
 		rules: [
@@ -72,6 +73,7 @@ module.exports = {
         open:true,
         port: '8080',
         compress:true,
+	historyApiFallback: true
     },
     mode:'development', 
 };
