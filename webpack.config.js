@@ -56,12 +56,12 @@ module.exports = {
             template: './src/index.html',
             hash: true
         }),
-        new CopyWebackPlugin([
-            {
-                from: './src/images',
-                to: 'images'
-            }
-        ]),
+        // new CopyWebackPlugin([
+        //     {
+        //         from: './src/images',
+        //         to: 'images'
+        //     }
+        // ]),
 		// hot 检测文件改动替换plugin
 		new webpack.NamedModulesPlugin(),      
 		new webpack.HotModuleReplacementPlugin()		
