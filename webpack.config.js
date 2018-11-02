@@ -6,11 +6,19 @@ const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const CopyWebackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-	entry: './src/app.js',
+	entry: {
+		index:'./src/app.js',
+		another: './src/another-module.js'
+	},
 	output: {
-		filename: 'app.js',
-		path: path.resolve(__dirname, 'dist'),
+		filename: '[name].bundle.js',
+      		path: path.resolve(__dirname, 'dist'),
 		publicPath: '/'
+	},
+	optimization: {
+	     splitChunks: {
+	       chunks: 'all'
+	     }
 	},
 	module: {
 		rules: [
