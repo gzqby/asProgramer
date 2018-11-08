@@ -1,2 +1,2 @@
-# creat-webpack-reactapp
-Quick start webpack-reactapp
+# webpack-create-reactapp
+Quickly start reactapp with wepack
