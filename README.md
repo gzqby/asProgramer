@@ -1,4 +1,7 @@
-# webpack-create-reactapp
-Quickly start reactapp with wepack
+# 一点编程理解记录——自我意识记录
 
-git clone https://github.com/zgoby/webpack-create-reactapp.git
+### 我是写js的，处于鄙视链低端，从来不鄙视。所以也得出了编程的第一条理解。从此开始记录：
+
+1.编程是思想，结合自己语言优势的思想，简单的转化成其他语言很简单，但是未必精髓。
+2.To C代码做错误处理的时候多输出默认值，让程序可用；To D代码要多报错，明确错误，及时stop！
+3.
