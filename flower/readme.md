@@ -1,0 +1,2 @@
+setBIgPriceColor函数，保持其传入值一致；在index2中能正常输出结果；在index1中会出现变量被定义在for循环中的一样的效果！  
+(代码定位在大概IE6水平的解析器中，在node11和chrome71依然会出现这个情况)
