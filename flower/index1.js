@@ -51,11 +51,7 @@ function tubeScreenFunc(bigPrice, ID, smallPrice, unit, BG, color, yuan, BIgPric
         dealPrice(smallPrice, array, rlSmall);
         dealPrice(ID, array, rlID);
         var returnArr = setColor(BG, color, array);
-        // console.log(returnArr.toString());
-        
         if(BIgPriceColor&&(BIgPriceColor==0||BIgPriceColor==1||BIgPriceColor==2)){returnArr=setBIgPriceColor(BIgPriceColor,array,returnArr,rlBig);}
-        // console.log(returnArr.toString());
-
         for (var index = 0; index < returnArr.length; index++) {
             returnArr[index] = runToHex(returnArr[index].join(''));
         }
@@ -72,7 +68,7 @@ function tubeScreenFunc(bigPrice, ID, smallPrice, unit, BG, color, yuan, BIgPric
     }
     // 设置大字颜色
     function setBIgPriceColor(BIgPriceColor,array,returnArr,rl){
-        var colorWordArr = [],returnArr1 = returnArr[0],returnArr2 = returnArr[1],arrTem=[];
+        var colorWordArr = [],returnArr1 = [].concat(returnArr[0]),returnArr2 = [].concat(returnArr[1]),arrTem=[];
         for(var i = 0;i<rl.length;i++){
             colorWordArr = colorWordArr.concat(rl[i]);
         }
@@ -89,11 +85,7 @@ function tubeScreenFunc(bigPrice, ID, smallPrice, unit, BG, color, yuan, BIgPric
                     returnArr2[index] = 1;
                 }
                 else if(BIgPriceColor==2){
-                    console.log(returnArr1.toString());
-                    
                     returnArr1[index] = 0;
-                    console.log(returnArr2.toString());
-
                     returnArr2[index] = 1;
                 }
             }
@@ -237,10 +229,10 @@ function tubeScreenFunc(bigPrice, ID, smallPrice, unit, BG, color, yuan, BIgPric
         return arr;
     }
     // ����������
-    function parseNum(number) {
-        if (typeIs(number) == "String") number = number;
-        else number = Math.round(number * 100);
-        return number.toString().split('').reverse();
+    function parseNum(value) {
+        if (typeIs(value) == "String"){value = value;}
+        else{ value<=1 ? value='0'+Math.round(value * 100).toString():value=Math.round(value * 100).toString();}
+        return value.split('').reverse();
     }
     // ���ֶ�Ӧ�ܵı�ʶ
     function numberRelationship(number) {
@@ -272,4 +264,4 @@ function tubeScreenFunc(bigPrice, ID, smallPrice, unit, BG, color, yuan, BIgPric
     return tubeScreenBinary(bigPrice, ID, smallPrice, unit, BG, color, yuan, BIgPriceColor);
     // return setBIgPriceColor(1,1,relationship.bigPrice);
 };
-console.log(tubeScreenFunc('9.95','3456','8.95','0','1','1','true','2'));
+console.log(tubeScreenFunc('0.99','3456','0.95','0','1','1','true','2'));
