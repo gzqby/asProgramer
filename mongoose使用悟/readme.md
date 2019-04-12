@@ -1,4 +1,4 @@
-如果用node、mongodb做前端，其实用不到很多增删改查，于是我思考使用node mongodb drive,然后顺便根据我的mongoose使用体验封装一下drive,自用。  
+如果用node、mongodb做前端，其实用不到很多增删改查，于是我思考使用node mongodb drive,然后顺便根据我的mongoose使用体验封装一下drive,自用。index原型思路
 整体逻辑如下：
 ```bash
 const MongoClient = require('mongodb').MongoClient;
