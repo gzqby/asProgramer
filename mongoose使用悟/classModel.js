@@ -4,13 +4,13 @@ class parentModel{
     }
     find(queryJson,func){
         let name = this.name;
-        client.connect(function(err) {
+        global._client.connect(function(err) {
             if(err){
                 func(err);
             }else{
-                client.db('nodercms').collection(name).find(queryJson).toArray(func)
+                global._client.db('nodercms').collection(name).find(queryJson).toArray(func)
             }
-            client.close();
+            global._client.close();
         });
     } 
 }
@@ -22,8 +22,3 @@ class Model extends parentModel{
 }
 
 module.exports = Model;
-
-const navModel = new Model('navs');
-
-console.log(navModel.find);
-console.log(navModel);
