@@ -42,6 +42,7 @@ class ZPromise{
         this.listen('_reject',function(err){
             _rejectFunc(err);
         });
+        return this;
     }
     finally(_finallyFunc){
         this.listen('_finally',function(){
@@ -49,16 +50,52 @@ class ZPromise{
         });
     }
     static all(PromiseArr){
-        let temArr = [];
-        PromiseArr.forEach(element => {
-            element.then(function(res){
-                temArr.push(res);
-            }).finally(function(){
-                if(temArr.length===PromiseArr.length){
-                    console.log(temArr);
-                }
-            })
-        });
+        let temArr = [],flag=0;
+        return new ZPromise(function(resolve,reject){
+            PromiseArr.forEach((element,index) => {
+                return element.then(function(res){
+                    temArr[index] = res;
+                    // 这个为什么使用标识不是最后判断长度或者验证数组中每个值，
+                    // 因为可能真的没有值或者'',null,undefined;
+                    flag++;
+                })
+                .catch(function(err){
+                    reject(err)
+                })
+                .finally(function(){
+                    if(temArr.length===flag){
+                        resolve(temArr);
+                    }
+                })
+            });
+        })
+    }
+    static resolve(res){
+        return new ZPromise(function(resolve){
+            setTimeout(() => {
+                resolve(res)
+            });
+        })
+    }
+    static reject(res){
+        return new ZPromise(function(resolve,reject){
+            setTimeout(() => {
+                reject(res)
+            });
+        })
+    }
+    static race(PromiseArr){
+        let tem = null;
+        return new ZPromise(function(resolve,reject){
+            PromiseArr.forEach((element,index) => {
+                element.then(function(res){
+                    if(!tem){
+                        tem = tem ? null : res;
+                        resolve(tem);
+                    }
+                })
+            });
+        })
     }
 }
 
@@ -73,12 +110,12 @@ const z = new ZPromise(function(resolve,reject){
     })
 })
 const g = new ZPromise(function(resolve,reject){
-    axios({
-        url:'http://47.105.232.102:2000/getnav',
-        method:'get'
-    })
-    .then(function(res){
-        resolve(res.data[0])
-    })
+    setTimeout(()=>{
+        resolve(1)
+    },0)
 })
-ZPromise.all([z,g]);
+
+const o = ZPromise.resolve(null);
+
+
+ZPromise.all([z,g,o]).then(res=>console.log(res));
