@@ -23,4 +23,4 @@
 21.学习antDesign源码的体会，对JavaScript的关注点一直在语言本身，忽略了赋能Js部分（这也是我喜欢写React的原因）。再加之有React、Vue这种虚拟DOM框架的封装更是偏离到了上层抽象部分，下一步要集中提升这部分能力，去学习React的封装抽象。  
 22.umd模式打包结果，自执行函数判断是否由define.amd、exports，或者自定义变量作为exports传递给实际函数即正式代码包裹函数。  
 23.hook不只是写法的变化，和classComponent是不一样的。比较特别的，useRef，hook重用，细粒度的拆分生命周期处理逻辑  
-24.Redux实际工作机制，就是利用combine来的对象的键数组形成遍历，执行对应的值函数，判断是否形成新值返回，or原值，or报错。  
+24.Redux：实际工作机制，就是利用combine来的对象的键数组形成遍历，执行对应的值函数，判断是否形成新值返回，or原值，or报错。中间件机制：固定传递args给每一个中间件。Redux中间价：applyMiddleware作为enhancer包装函数，接收createStore返回dispatch被覆盖的store，dispatch串联中间件带动执行  
