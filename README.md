@@ -26,3 +26,4 @@
 24.Redux：实际工作机制，就是利用combine来的对象的键数组形成遍历，执行对应的值函数，判断是否形成新值返回，or原值，or报错。中间件机制：分步传递中间件做的处理的return。Redux中间价：applyMiddleware作为enhancer包装函数，接收createStore返回dispatch被覆盖的store，dispatch串联中间件带动执行  
 25.看了一些优秀开源项目的理解：理顺跑通的逻辑，再上完善的test用例，加上把工具函数方法抽离，再加上工具函数方法的进一步可配置。  
 26.react-redux：6.x Provider实现store订阅，context.consumer更新组件，7.x Provider只是作为context.provider传递store,并监控store变更；7.x 使用了hooks，并且重心又转向到connect函数，引入了自身的订阅机制去自更新，并且订阅更新只是相关当前connect的算是与其他处connect隔离  
+27.co:传入gernerator，第一步执行生成gen,gen根据gen.next()的类型选择执行回调  
