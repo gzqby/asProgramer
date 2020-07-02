@@ -6,7 +6,7 @@
 - [co解析来理解Async函数](https://github.com/zgoby/asProgramer/issues/3)
 - [进程、线程与浏览器的多进程架构 ](https://github.com/zgoby/asProgramer/issues/1)
 - [jquery之DOM进阶](https://github.com/zgoby/jQuery-Record)
-- [antdesign-reactUI](https://github.com/zgoby/learn-react-source-code)（看了写了不少，但是感觉并没有形成具象的总结）
+- [antdesign-reactUI](https://github.com/zgoby/learn-react-source-code)
 - 中间件-结合express与redux中间件（待开）
 - html模版代码解析-结合ejs（待开）
 
