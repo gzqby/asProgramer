@@ -9,12 +9,14 @@
 - [antdesign-reactUI](https://github.com/zgoby/learn-react-source-code)
 - 中间件-结合express与redux中间件（待开）
 - [html模版代码解析-结合ejs](https://github.com/zgoby/asProgramer/issues/4)
+- [Recoil基于源码解析与介绍](https://github.com/zgoby/asProgramer/issues/5)
 
 ## 总结
 
 > 这里是摘录并总结的值得记录的东西
 
 - [记录一些轮子吧](https://github.com/zgoby/asProgramer/issues/2)
+- [JavaScript 中的 DILOS 原则](https://github.com/zgoby/asProgramer/issues/6)
 
 ## 时间线
 
