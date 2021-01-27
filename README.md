@@ -10,6 +10,7 @@
 - [中间件-结合express与redux中间件](https://github.com/zgoby/asProgramer/issues/7)
 - [html模版代码解析-结合ejs](https://github.com/zgoby/asProgramer/issues/4)
 - [Recoil基于源码解析与介绍](https://github.com/zgoby/asProgramer/issues/5)
+- [一个正则](https://github.com/zgoby/asProgramer/issues/8)
 
 ## 总结
 
